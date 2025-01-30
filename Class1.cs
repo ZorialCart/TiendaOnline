@@ -34,7 +34,7 @@ public class Class1 : Connection
                 { "precio", precio }
             };
 
-        _collection.InsertOne(documento);
+        collection.InsertOne(documento);
         Console.WriteLine("\nProducto agregado exitosamente.");
         Console.ReadKey();
     }
@@ -43,7 +43,7 @@ public class Class1 : Connection
     {
         Console.Clear();
         Console.ForegroundColor = ConsoleColor.Cyan;
-        var productos = _collection.Find(new BsonDocument()).ToList();
+        var productos = collection.Find(new BsonDocument()).ToList();
 
         if (productos.Count > 0)
         {
@@ -68,7 +68,7 @@ public class Class1 : Connection
         Console.Write("Ingrese el ID del producto a actualizar: ");
         var id = int.Parse(Console.ReadLine());
 
-        var producto = _collection.Find(Builders<BsonDocument>.Filter.Eq("id", id)).FirstOrDefault();
+        var producto = collection.Find(Builders<BsonDocument>.Filter.Eq("id", id)).FirstOrDefault();
 
         if (producto != null)
         {
@@ -86,10 +86,10 @@ public class Class1 : Connection
             .Set("precio", nuevoPrecio);
 
             var filtro = Builders<BsonDocument>.Filter.Eq("id", id);
-            var resultado = _collection.UpdateOne(filtro, actualizacion);
+            var resultado = collection.UpdateOne(filtro, actualizacion);
             if (resultado.ModifiedCount > 0)
                 Console.WriteLine("\nProducto actualizado exitosamente.");
-           
+
         }
         else
             Console.WriteLine("\nNo se encontró un producto con ese ID.");
@@ -104,8 +104,8 @@ public class Class1 : Connection
         Console.Write("Ingrese el ID del producto a eliminar: ");
         var id = int.Parse(Console.ReadLine());
 
-        var filtro = Builders<BsonDocument>.Filter.Eq("id", id);  
-        var resultado = _collection.DeleteOne(filtro);
+        var filtro = Builders<BsonDocument>.Filter.Eq("id", id);
+        var resultado = collection.DeleteOne(filtro);
 
         if (resultado.DeletedCount > 0)
             Console.WriteLine("\nProducto eliminado exitosamente.");
@@ -114,4 +114,5 @@ public class Class1 : Connection
 
         Console.ReadKey();
     }
+
 }

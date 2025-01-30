@@ -31,3 +31,4 @@ C:\Users\Usuario\Desktop\Cursos\C#\MongoDB\obj\Debug\net8.0\refint\MongoDB.dll
 C:\Users\Usuario\Desktop\Cursos\C#\MongoDB\obj\Debug\net8.0\MongoDB.pdb
 C:\Users\Usuario\Desktop\Cursos\C#\MongoDB\obj\Debug\net8.0\MongoDB.genruntimeconfig.cache
 C:\Users\Usuario\Desktop\Cursos\C#\MongoDB\obj\Debug\net8.0\ref\MongoDB.dll
+C:\Users\Usuario\Desktop\Cursos\C#\MongoDB\obj\Debug\net8.0\MongoDB.sourcelink.json
